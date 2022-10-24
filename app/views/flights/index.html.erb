@@ -5,10 +5,9 @@
 <%= f.label :arrival_airport, "Arrival Airport"%>
 <%= f.collection_select(:arrival_airport, Airport.all, :id, :name)%>
 <%= f.label :departure_date, "Departure Date"%>
-<%# <%= f.collection_select(:departure_date, Flight.select(:departure_date).distinct, :id, :departure_date)%>  %>
-<%# <%= f.collection_select(:departure_date, Flight.all, :id, :departure_date)%> %>
 <%= f.collection_select(:departure_date, Flight.select(:departure_date).distinct, :departure_date, :departure_date)%>
-
+<%= f.label :number_of_passengers, "Number of passengers"%>
+<%= f.select :number_of_passengers, options_for_select([[1,1],[2,2],[3,3],[4,4]])%>
 <%= f.submit "Search" %>
 <%end%>
 
