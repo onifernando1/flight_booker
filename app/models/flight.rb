@@ -8,6 +8,7 @@ class Flight < ApplicationRecord
     end
 
     def arrival_date_formatted
-        arrival_time.strftime("%d/%m/%Y")
+        atime = arrival_time.strftime("%d/%m/%Y")
     end
+    
 end
