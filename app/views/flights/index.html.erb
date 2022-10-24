@@ -1,0 +1,11 @@
+
+<%=form_with url:"/", method: :get do |f| %>
+<%= f.collection_select(:departure_airport, Airport.all, :id, :name)%>
+<%= f.collection_select(:arrival_airport, Airport.all, :id, :name)%>
+<% departure_date_array = Flight.all.map { |flight| [flight.departure_time.strftime("%d/%m/%Y"), flight.id] } %>
+<%= f.collection_select(:departure_time, Flight.all, :id, :departure_date_formatted)%>
+<%= f.collection_select(:arrival_time, Flight.all, :id, :arrival_date_formatted)%>
+<%= f.submit "Search" %>
+<%end%>
+
+
