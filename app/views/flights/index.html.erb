@@ -1,9 +1,12 @@
 
-<%=form_with url:"/", method: :get do |f| %>
+<%=form_with url:"/", method:"get",data: { turbo: false} do |f| %>
+<%= f.label :departure_airport, "Departure Airport"%>
 <%= f.collection_select(:departure_airport, Airport.all, :id, :name)%>
+<%= f.label :arrival_airport, "Arrival Airport"%>
 <%= f.collection_select(:arrival_airport, Airport.all, :id, :name)%>
-<% departure_date_array = Flight.all.map { |flight| [flight.departure_time.strftime("%d/%m/%Y"), flight.id] } %>
+<%= f.label :departure_time, "Departure Date"%>
 <%= f.collection_select(:departure_time, Flight.all, :id, :departure_date_formatted)%>
+<%= f.label :arrival_time, "Arrival Date"%>
 <%= f.collection_select(:arrival_time, Flight.all, :id, :arrival_date_formatted)%>
 <%= f.submit "Search" %>
 <%end%>
