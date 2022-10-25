@@ -8,7 +8,7 @@ class FlightsController < ApplicationController
     end 
 
     def flight_params
-        params.permit(:departure_airport_id, :arrival_airport_id, :departure_date, :number_of_passengers, :commit)
+        params.permit(:departure_airport_id, :arrival_airport_id, :departure_date)
     end 
 
 

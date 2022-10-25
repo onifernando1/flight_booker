@@ -7,7 +7,7 @@
   </head>
   <body>
 
-  <%# <% if @potential_flights.length == 0%> %>
+  <% if @potential_flights.length == 0 %>
 
     <div class="flight_index_form_bg">
 
@@ -51,49 +51,49 @@
       <%end%>
       </div>
     </div>
-  <%# <%else %> %>
+  <% else %>
   <div class="flight_index_form_bg">
 
-    <div class="flight_index_form_container">       
+    <div class="flight_index_form_container">         
 
-      <%# <%=form_with url:"/", method:"get",data: { turbo: false} do |f| %> %>
-        <%# <div class="flight_form_container"> %>
-          <%# <div class="flight_form"> %>
-            <%# <%= f.label :departure_airport, "Departure Airport"%> %>
-            <%# <%= f.collection_select(:departure_airport, Airport.all, :id, :name)%> %>
-          <%# </div> %>
-          <%# <div class ="flight_form"> %>
-            <%# <%= f.label :arrival_airport, "Arrival Airport"%> %>
-            <%# <%= f.collection_select(:arrival_airport, Airport.all, :id, :name)%> %>
-          <%# </div> %>
-          <%# <div class="flight_form"> %>
-            <%# <%= f.label :departure_date, "Departure Date"%> %>
-            <%# <%= f.collection_select(:departure_date, Flight.select(:departure_date).distinct, :departure_date, :departure_date)%> %>
-          <%# </div> %>
-          <%# <div class="flight_form passengers"> %>
-            <%# <%= f.label :number_of_passengers, "No. of passengers"%> %>
-            <%# <%= f.select :number_of_passengers, options_for_select([[1,1],[2,2],[3,3],[4,4]])%> %>
-          <%# </div> %>
-        <%# </div> %>
-<%#  %>
-        <%# </div> %>
-<%#  %>
-          <%# <div class="flight_search"> %>
-            <%# <%= f.submit "Search Flights" %> %>
-          <%# </div> %>
-      <%# <%end%> %>
+      <%=form_with url:"/", method:"get",data: { turbo: false} do |f| %>
+        <div class="flight_form_container">
+          <div class="flight_form">
+            <%= f.label :departure_airport_id, "Departure Airport" %>
+            <%= f.collection_select(:departure_airport_id, Airport.all, :id, :name, :selected => @flight.departure_airport_id) %>
+          </div>
+          <div class ="flight_form">
+            <%= f.label :arrival_airport_id, "Arrival Airport" %>
+            <%= f.collection_select(:arrival_airport_id, Airport.all, :id, :name, :selected => @flight.arrival_airport_id) %>
+          </div>
+          <div class="flight_form">
+            <%= f.label :departure_date, "Departure Date" %>
+            <%= f.collection_select(:departure_date, Flight.select(:departure_date).distinct, :departure_date, :departure_date) %>
+          </div>
+          <div class="flight_form passengers">
+            <%= f.label :number_of_passengers, "No. of passengers" %>
+            <%= f.select :number_of_passengers, options_for_select([[1,1],[2,2],[3,3],[4,4]])%> 
+          </div>
+        </div>
+
+        </div>
+
+          <div class="flight_search">
+            <%= f.submit "Search Flights" %>
+          </div>
+      <%end %>
       </div>
     </div>
     <%  @potential_flights.each do |flight|%>
     <div>
-    <%=flight.departure_airport_id.name%> 
-    <%=flight.arrival_airport_id.name%> 
+    <%=flight.departure_airport_id%> 
+    <%=flight.arrival_airport_id%> 
     <%=flight.departure_date%> 
     <%=flight.arrival_date%> 
     </div> 
     <% end%>
     </div>
-    <%# <%end%> %>
+    <%end %>
   </body>
 </html>
 
