@@ -13,7 +13,7 @@ body {
 }
 
 .flight_index_form_container {
-        background-color: #111236;
+        background-color: #111236cf;
         height:170px;
         width:1000px;   
         padding:1.5rem;
@@ -22,12 +22,33 @@ body {
         
 }
 
+.flight_index_form_container > p {
+    color:white;
+}
+
+.flight_index_form_container > form > p {
+    color:white;
+    margin-top:-6px;
+}
+
+
+
+.flight_index_quote {
+    color:rgb(59, 66, 144);
+    position:absolute;
+    margin-top:-300px;
+    margin-left:-500px;
+    font-size:3em;
+    font-weight: 900;
+}
+
 .flight_form_container {
     display:flex;
     gap:1px;
     margin-top:-40px;
     justify-content: center;
     height:100px;
+    margin-bottom:10px;
 }
 
 .flight_form.one_way  {
@@ -42,6 +63,7 @@ body {
     gap:10px;
     font-weight:200;
     margin-left:-13px;
+    margin-bottom:10px;
 
 
 
@@ -99,8 +121,8 @@ body {
 }
 
 .flight_search {
-    margin-left:787px;
-    margin-top:-50px;
+    margin-left:-240px;
+    margin-top:100px;
 }
 
 .flight_form.direct_flights {
@@ -123,3 +145,4 @@ body {
     gap:23px;
     align-self:flex-start;
 } 
+
