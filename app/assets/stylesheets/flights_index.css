@@ -146,3 +146,16 @@ body {
     align-self:flex-start;
 } 
 
+.flight_index_form_bg.results   {
+    background-image:none;
+    height:200px;
+    background-color:#dee3ed;
+}
+
+.flight_index_form_container.results {
+    height:90px;
+}
+
+.flight_search.results{
+    margin-top:50px;
+}

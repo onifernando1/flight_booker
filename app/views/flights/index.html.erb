@@ -52,12 +52,12 @@
       </div>
     </div>
   <% else %>
-  <div class="flight_index_form_bg">
+  <div class="flight_index_form_bg results">
 
-    <div class="flight_index_form_container">         
+    <div class="flight_index_form_container results">         
 
       <%=form_with url:"/", method:"get",data: { turbo: false} do |f| %>
-        <div class="flight_form_container">
+        <div class="flight_form_container results">
           <div class="flight_form">
             <%= f.label :departure_airport_id, "Departure Airport" %>
             <%= f.collection_select(:departure_airport_id, Airport.all, :id, :name, :selected => @flight.departure_airport_id) %>
@@ -78,7 +78,7 @@
 
         </div>
 
-          <div class="flight_search">
+          <div class="flight_search results">
             <%= f.submit "Search Flights" %>
           </div>
       <%end %>
