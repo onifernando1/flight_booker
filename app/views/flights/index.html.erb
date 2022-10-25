@@ -1,21 +1,35 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Oniflights</title>
+  </head>
+  <body>
+    <div class="flight_index_form_bg">
+    <div class="flight_index_form">
+      <%=form_with url:"/", method:"get",data: { turbo: false} do |f| %>
+      <%= f.label :departure_airport, "Departure Airport"%>
+      <%= f.collection_select(:departure_airport, Airport.all, :id, :name)%>
+      <%= f.label :arrival_airport, "Arrival Airport"%>
+      <%= f.collection_select(:arrival_airport, Airport.all, :id, :name)%>
+      <%= f.label :departure_date, "Departure Date"%>
+      <%= f.collection_select(:departure_date, Flight.select(:departure_date).distinct, :departure_date, :departure_date)%>
+      <%= f.label :number_of_passengers, "Number of passengers"%>
+      <%= f.select :number_of_passengers, options_for_select([[1,1],[2,2],[3,3],[4,4]])%>
+      <%= f.submit "Search" %>
+      <%end%>
+      </div>
+    </div>
 
-<%=form_with url:"/", method:"get",data: { turbo: false} do |f| %>
-<%= f.label :departure_airport, "Departure Airport"%>
-<%= f.collection_select(:departure_airport, Airport.all, :id, :name)%>
-<%= f.label :arrival_airport, "Arrival Airport"%>
-<%= f.collection_select(:arrival_airport, Airport.all, :id, :name)%>
-<%= f.label :departure_date, "Departure Date"%>
-<%= f.collection_select(:departure_date, Flight.select(:departure_date).distinct, :departure_date, :departure_date)%>
-<%= f.label :number_of_passengers, "Number of passengers"%>
-<%= f.select :number_of_passengers, options_for_select([[1,1],[2,2],[3,3],[4,4]])%>
-<%= f.submit "Search" %>
-<%end%>
-
-<%# <% @potential_flights.each do |flight|%>
-<%# <div> %>
-<%# <%=flight.departure_airport.name%> %>
-<%# <%=flight.arrival_airport.name%> %>
-<%# <%=flight.departure_date%> %>
-<%# <%=flight.arrival_date%> %>
-<%# </div> %>
-<%# <%end%> %> %>
+    <%  @potential_flights.each do |flight|%>
+    <div>
+    <%=flight.departure_airport.name%> 
+    <%=flight.arrival_airport.name%> 
+    <%=flight.departure_date%> 
+    <%=flight.arrival_date%> 
+    </div> 
+    <% end%>
+    </div>
+  </body>
+</html>

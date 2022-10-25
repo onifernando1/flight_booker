@@ -1,0 +1,16 @@
+.flight_index_form_bg   {
+    background-image: url('beach.jpg');
+    background-position: -200px -250px;
+    height:500px;
+    width:2500px;
+}
+
+.flight_index_form {
+        background-color: #111236;
+        height:150px;
+        width:900px;
+}
+
+label {
+    color:white;
+}
