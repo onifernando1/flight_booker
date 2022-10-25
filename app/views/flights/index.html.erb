@@ -68,11 +68,11 @@
           </div>
           <div class="flight_form">
             <%= f.label :departure_date, "Departure Date" %>
-            <%= f.collection_select(:departure_date, Flight.select(:departure_date).distinct, :departure_date, :departure_date) %>
+            <%= f.collection_select(:departure_date, Flight.select(:departure_date).distinct, :departure_date, :departure_date, :selected => @flight.departure_date) %>
           </div>
           <div class="flight_form passengers">
             <%= f.label :number_of_passengers, "No. of passengers" %>
-            <%= f.select :number_of_passengers, options_for_select([[1,1],[2,2],[3,3],[4,4]])%> 
+            <%= f.select :number_of_passengers, options_for_select([[1,1],[2,2],[3,3],[4,4]], params[:number_of_passengers])%> 
           </div>
         </div>
 
