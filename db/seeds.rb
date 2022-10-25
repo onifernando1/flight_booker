@@ -6,13 +6,13 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 Airport.delete_all
-lgw = Airport.create(name:"London Gatwick", code:"LGW")
-mad = Airport.create(name:"Madrid", code:"MAD")
-mxp = Airport.create(name:"Milan Malpensa", code:"MXP")
-del  = Airport.create(name:"New Delhi", code:"DEL")
+lgw = Airport.create(id:1,name:"London Gatwick", code:"LGW")
+mad = Airport.create(id:2,name:"Madrid", code:"MAD")
+mxp = Airport.create(id:3,name:"Milan Malpensa", code:"MXP")
+del  = Airport.create(id:4,name:"New Delhi", code:"DEL")
 
 Flight.delete_all
-Flight.create(departure_airport_id:lgw.id, departure_date:"2030-12-25", departure_time:"10:00:00", duration: 150, arrival_airport_id:mad.id, arrival_date:"2030-12-25",arrival_time: "13:30:00",price:120)
+Flight.create(departure_airport_id:1, departure_date:"2030-12-25", departure_time:"10:00:00", duration: 150, arrival_airport_id:2, arrival_date:"2030-12-25",arrival_time: "13:30:00",price:120)
 Flight.create(departure_airport_id:mad.id, departure_date:"2030-12-26", departure_time:"15:00:00", duration:145, arrival_airport_id:lgw.id, arrival_date:"2030-12-26",arrival_time: "16:25:00",price:160)
 Flight.create(departure_airport_id:lgw.id, departure_date:"2030-12-25", departure_time:"13:00:00", duration: 150, arrival_airport_id:mad.id, arrival_date:"2030-12-25",arrival_time: "16:30:00",price:120)
 Flight.create(departure_airport_id:mad.id, departure_date:"2030-12-26", departure_time:"18:00:00", duration:145, arrival_airport_id:lgw.id, arrival_date:"2030-12-26",arrival_time: "19:25:00",price:160)
