@@ -24,11 +24,11 @@
         <div class="flight_form_container">
           <div class="flight_form">
             <%= f.label :departure_airport_id, "Departure Airport"%>
-            <%= f.collection_select(:departure_airport, Airport.all, :id, :name)%>
+            <%= f.collection_select(:departure_airport_id, Airport.all, :id, :name)%>
           </div>
           <div class ="flight_form">
             <%= f.label :arrival_airport_id, "Arrival Airport"%>
-            <%= f.collection_select(:arrival_airport, Airport.all, :id, :name)%>
+            <%= f.collection_select(:arrival_airport_id, Airport.all, :id, :name)%>
           </div>
           <div class="flight_form">
             <%= f.label :departure_date, "Departure Date"%>
@@ -86,8 +86,8 @@
     </div>
     <%  @potential_flights.each do |flight|%>
     <div>
-    <%=flight.departure_airport.name%> 
-    <%=flight.arrival_airport.name%> 
+    <%=flight.departure_airport_id.name%> 
+    <%=flight.arrival_airport_id.name%> 
     <%=flight.departure_date%> 
     <%=flight.arrival_date%> 
     </div> 
