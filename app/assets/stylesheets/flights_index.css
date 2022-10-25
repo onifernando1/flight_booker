@@ -1,21 +1,125 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .flight_index_form_bg   {
     background-image: url('beach.jpg');
     background-position: -200px -1050px;
-    height:500px;
+    height:700px;
     width:100%;
     display:flex;
     align-items: center;
     justify-content: center;
 }
 
-.flight_index_form {
+.flight_index_form_container {
         background-color: #111236;
         height:170px;
-        width:1000px;
+        width:1000px;   
         padding:1.5rem;
-        margin-left:clamp(0px, 100px, -100px)
+        margin-left:clamp(0px, 100px, -100px);
+        border-radius:5px;
+        
 }
 
-label {
-    color:white;
+.flight_form_container {
+    display:flex;
+    gap:1px;
+    margin-top:-40px;
+    justify-content: center;
+    height:100px;
 }
+
+.flight_form.one_way  {
+
+    height:50px;
+    width:100px;
+    font-size:1.7em;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap:10px;
+    font-weight:200;
+    margin-left:-13px;
+
+
+
+}
+
+.flight_form.one_way >label  {
+
+    margin-left:-7px;
+}
+
+.flight_form > label {
+    color:white;
+    font-size:0.5em;
+    font-weight:700;
+}
+
+.flight_form > select {
+    height:30px;
+    width:300px;
+}
+
+.flight_form.passengers > select {
+    width:100px;
+}
+
+
+
+.flight_form {
+    display:flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.flight_search > input[type=submit] {
+    background-color: #00a698;
+    color:white;
+    font-weight:700;
+    font-size:1.4rem;
+    border-radius: 5px;
+    padding:10px;
+    height:50px;
+    width:220px;
+
+}
+
+.flight_search > input[type=submit]:hover {
+    background-color: #019084;
+    color:white;
+    font-weight:700;
+    font-size:1.4rem;
+    border-radius: 5px;
+    padding:10px;
+    height:50px;
+
+}
+
+.flight_search {
+    margin-left:787px;
+    margin-top:-50px;
+}
+
+.flight_form.direct_flights {
+    height:60px;
+    width:180px;
+    display:flex;
+    justify-content: center;
+    
+    
+}
+
+ .direct_flights {
+    color:white;
+    font-weight: 600;
+    font-size:13px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:-20px;
+    gap:23px;
+    align-self:flex-start;
+} 
