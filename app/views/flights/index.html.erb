@@ -115,19 +115,24 @@
         </div>
         
         <div class="arrival_time"><%=flight.arrival_time.strftime("%H:%M")%>
-               <div class="arrival_airport_code"> <%=flight.arrival_airport.code%> </div>
-</div>
+               
+               
+          <div class="arrival_airport_code"> <%=flight.arrival_airport.code%> </div>
+        </div>
       
     
-      <div>
-        <%=f.label flight.id, "#{flight.departure_airport.name}"%>
-        <%= f.radio_button flight.id, "Flight 1"%>
+      <div class="selection">
+      <div class="price">£<%= flight.price%></div>
+      <div class="flight_radio_button>
+        <%=f.label :flight, "Select"%>
+        <%= f.radio_button :flight, "Select"%>
+        </div>
       </div>
-  </div>
+    </div>
 
-    <%end %>
+  <%end %>
 
-  <%end%>
+<%end%>
 </div>
     <%end %>
   </body>

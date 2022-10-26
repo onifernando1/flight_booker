@@ -153,7 +153,7 @@ body {
     border-radius: 25px;
     display:grid;
     grid-template-rows: 1fr;
-    grid-template-columns: 160px 160px 250px 160px;
+    grid-template-columns: 160px 160px 250px 160px 160px;
 
 }
 
@@ -207,8 +207,8 @@ body > div.flight_index_form_bg.results > div > form > div.flight_search.results
     margin-top:-30px;
     display:flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    height:1000px;
 }
 
 
@@ -279,3 +279,26 @@ body > div.flight_index_form_bg.results > div > form > div.flight_search.results
     font-weight:0;
     color:rgb(106, 106, 106);
 }
+
+.flight_radio_button {
+    height:100px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.price {
+    font-size:1.7rem;
+}
+
+.selection {
+    display:flex;
+    flex-direction: column;
+    height:100px;
+    width:100px;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+}
+
