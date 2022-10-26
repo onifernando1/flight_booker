@@ -145,10 +145,10 @@ body {
 }
 
 .flight{
-    height:100%;
-    width:100%;
+    height:400px;
+    width:800px;
     background-color: white;
-    margin-bottom:20px;
+    margin-top:50px;
     padding:30px;
 
 }
@@ -173,18 +173,40 @@ body {
 
 .flight_index_form_container.results {
     height:90px;
+    margin-bottom:100px;
+    margin-top:100px;
 }
 
 .flight_form_container.results {
     height:120px;
     width:1000px;
     background:none;
-    margin-top:-50px;
+    margin-top:-40px;
+}
+
+body > div.flight_index_form_bg.results > div > form > div.flight_search.results > input[type=submit] {
+    /* margin-top:-100px; */
 }
 
 .flight_search.results{
-    margin-top:50px;
+    height:20px;
+    width:400px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:-20px;
+    margin-left:694px;
 }
+
+.flight_results_container {
+    background-color:#dee3ed;
+    margin-top:-30px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 
 .plane > img {
     height:17px;

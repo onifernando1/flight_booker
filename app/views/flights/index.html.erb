@@ -76,17 +76,17 @@
           </div>
         </div>
 
-        </div>
 
-          <div class="flight_search results">
-            <%= f.submit "Search Flights" %>
-          </div>
+      <div class="flight_search results">
+        <%= f.submit "Search Flights" %>
+      </div>
       <%end %>
       </div>
     </div>
     
-  <div class="flight_form_container">
   <%= form_with do |f|%>
+    <div class="flight_results_container">
+
   <% @potential_flights.each do |flight|%>
     <div class="flight">
         <div>Icon</div>
@@ -116,9 +116,9 @@
         <%=f.label flight.id, "#{flight.departure_airport.name}"%>
         <%= f.radio_button flight.id, "Flight 1"%>
       </div>
+  </div>
 
     <%end %>
-  </div>
 
   <%end%>
 </div>
