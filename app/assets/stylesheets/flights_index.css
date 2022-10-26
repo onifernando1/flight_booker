@@ -24,6 +24,7 @@ body {
 
 .flight_index_form_container > p {
     color:white;
+    margin-left:-2px;
 }
 
 .flight_index_form_container > form > p {
@@ -78,6 +79,7 @@ body {
     color:white;
     font-size:0.5em;
     font-weight:700;
+    margin-bottom:3px;
 }
 
 .flight_form > select {
@@ -134,6 +136,23 @@ body {
     
 }
 
+.flight_form_container{
+    background-color:#dee3ed; 
+    margin-top:30px;
+    height:1000px;
+    width:1000px;
+
+}
+
+.flight{
+    height:100%;
+    width:100%;
+    background-color: white;
+    margin-bottom:20px;
+    padding:30px;
+
+}
+
  .direct_flights {
     color:white;
     font-weight: 600;
@@ -156,6 +175,51 @@ body {
     height:90px;
 }
 
+.flight_form_container.results {
+    height:120px;
+    width:1000px;
+    background:none;
+    margin-top:-50px;
+}
+
 .flight_search.results{
     margin-top:50px;
+}
+
+.plane > img {
+    height:17px;
+    margin-left:-130px;
+}
+
+.line > svg {
+    height:20px;
+    width:500px;
+    margin-top:20px;
+    
+}
+
+.middle {
+    height:100px;
+    width:600px;
+    /* background-color: red; */
+    margin-bottom:100px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.plane_and_line {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* background-color: yellow; */
+    height:15px;
+    width:300px;
+
+}
+
+.direct {
+    color:rgb(7, 255, 7)
 }
