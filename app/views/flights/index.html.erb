@@ -89,8 +89,13 @@
 
   <% @potential_flights.each do |flight|%>
     <div class="flight">
-        <div>Icon</div>
-        <div><%=flight.departure_time.strftime("%H:%M")%></div>
+        <div class="flight_logo"> <%=image_tag "flightlogo.png"%>
+        </div>
+
+        <div class="departure_time">
+        <%=flight.departure_time.strftime("%H:%M")%>
+        <div class="departure_airport_code"><%=flight.departure_airport.code%></div>
+        </div>
         <div class ="middle">
           <div class="duration">
             <%=(flight.duration.to_f/60).round(1) %> hours 
@@ -109,7 +114,9 @@
 
         </div>
         
-        <div><%=flight.arrival_time.strftime("%H:%M")%></div>
+        <div class="arrival_time"><%=flight.arrival_time.strftime("%H:%M")%>
+               <div class="arrival_airport_code"> <%=flight.arrival_airport.code%> </div>
+</div>
       
     
       <div>

@@ -145,11 +145,15 @@ body {
 }
 
 .flight{
-    height:400px;
-    width:800px;
+    height:100px;
+    width:900px;
     background-color: white;
     margin-top:50px;
     padding:30px;
+    border-radius: 25px;
+    display:grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 160px 160px 250px 160px;
 
 }
 
@@ -222,13 +226,28 @@ body > div.flight_index_form_bg.results > div > form > div.flight_search.results
 
 .middle {
     height:100px;
-    width:600px;
+    width:250px;
     /* background-color: red; */
     margin-bottom:100px;
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.departure_time, .arrival_time {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:100px;
+}
+
+.flight_logo {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:100px;
 }
 
 .plane_and_line {
@@ -239,9 +258,24 @@ body > div.flight_index_form_bg.results > div > form > div.flight_search.results
     /* background-color: yellow; */
     height:15px;
     width:300px;
+    /* margin-left:-100px; */
 
 }
 
 .direct {
     color:rgb(7, 255, 7)
+}
+
+.departure_time, .arrival_time {
+    font-size:2rem;
+}
+
+.flight_logo >img  {
+    height:100px;
+}
+
+.departure_airport_code, .arrival_airport_code{
+    font-size:1.4rem;
+    font-weight:0;
+    color:rgb(106, 106, 106);
 }
