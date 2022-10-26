@@ -136,7 +136,7 @@ body {
     
 }
 
-.flight_form_container{
+.flight_form_container.results{
     background-color:#dee3ed; 
     margin-top:30px;
     height:1000px;
