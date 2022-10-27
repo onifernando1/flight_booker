@@ -126,12 +126,16 @@
       <div class="flight_radio_button>
         <%=f.label :flight, "Select"%>
         <%= f.radio_button :flight, "Select"%>
+        
         </div>
       </div>
     </div>
-
+      
   <%end %>
-
+        <div class="flight_next">
+          <%=f.submit "Continue"%>
+        </div>
+      <%=f.hidden_field :number_of_passengers%>
 <%end%>
 </div>
     <%end %>

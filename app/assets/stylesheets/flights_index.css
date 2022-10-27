@@ -302,3 +302,19 @@ body > div.flight_index_form_bg.results > div > form > div.flight_search.results
     gap:10px;
 }
 
+.flight_next >input{
+    background-color: #00a698;
+    color:white;
+    padding:5px;
+    width:80px;
+    height:40px;
+    border-radius:10px;
+    margin-top:30px;
+
+}
+
+.flight_next > input:hover{
+    background-color: #019084;
+
+}
+
