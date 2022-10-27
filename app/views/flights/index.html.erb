@@ -84,7 +84,7 @@
       </div>
     </div>
     
-  <%= form_with do |f|%>
+      <%=form_with url:"/bookings", method:"get",data: { turbo: false} do |f| %>
     <div class="flight_results_container">
 
   <% @potential_flights.each do |flight|%>
