@@ -3,10 +3,10 @@
 <%= @booking.flight.departure_time.strftime("%H:%M") %>
 <%= @booking.flight.arrival_airport.name%>
 <%= @booking.flight.arrival_date.strftime("%d/%m") %>
-<%= @booking.flight.arrival_time.strftime("%H:%M") %>
+<%= @booking.flight.arrival_time.strftime("%H:%M") %> # change to selected fight stuff 
 
 <%= form_with model:@booking, data:{turbo:false} do |f| %>
-<%=f.hidden_field :flight_id, value: @booking.flight.id%>
+<%=f.hidden_field :flight_id, value: @booking.flight.id%> # change to selecgted flight 
 <%= fields_for :passenger do |passenger_form|%>
     <%=passenger_form.label :passenger_name, "Passenger Name"%>
     <%=passenger_form.text_field :passenger_name%>
