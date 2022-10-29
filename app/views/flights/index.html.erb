@@ -84,7 +84,7 @@
       </div>
     </div>
     
-      <%=form_with url:"/bookings/new", method:"get",data: { turbo: false} do |f| %>
+      <%=form_with url:"bookings/new", method:"get",data: { turbo: false} do |f| %>
     <div class="flight_results_container">
 
   <% @potential_flights.each do |flight|%>
@@ -124,8 +124,9 @@
       <div class="selection">
       <div class="price">£<%= flight.price%></div>
       <div class="flight_radio_button>
+
         <%=f.label :flight, "Select"%>
-        <%= f.radio_button :flight, "Select"%>
+        <%= f.radio_button :flight, flight.id%> 
         
         </div>
       </div>

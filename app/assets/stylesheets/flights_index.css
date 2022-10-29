@@ -288,6 +288,11 @@ body > div.flight_index_form_bg.results > div > form > div.flight_search.results
 
 }
 
+.flight_radio_button > * {
+    color:white;
+
+}
+
 .price {
     font-size:1.7rem;
 }
