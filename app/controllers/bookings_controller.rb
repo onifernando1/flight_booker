@@ -3,6 +3,7 @@ class BookingsController < ApplicationController
     def new
         @selected_flight = Flight.find(flight_params[:flight])
         @booking = Booking.new(flight_id: @selected_flight.id) 
+        create_passengers()
 
     end 
 
@@ -14,14 +15,11 @@ class BookingsController < ApplicationController
             render :new, status: :unprocessable_entity
         end 
 
-        @booking.passenger 
+    
+    end 
 
-        # @passenger = Passenger.new(passenger_params)
-        # if @passenger.save 
-        #     redirect_to @booking 
-        # else 
-        #     render :new, status: :unprocessable_entity
-        # end 
+    def show 
+        @booking = Booking.find(params[:id])
     end 
 
 
@@ -32,16 +30,14 @@ class BookingsController < ApplicationController
 
     def create_passengers
         @number_of_passengers = params[:number_of_passengers]
-        # @number_of_passengers.to_i.times do {@booking.build_passenger} end 
+        @number_of_passengers.to_i.times {@booking.passengers.build}
     end 
 
     def booking_params
-        params.require(:booking).permit(:flight_id)
+        params.require(:booking).permit(:flight_id, passenger_attributes: [:name, :email])
     end 
 
-    def passenger_params
-        params.require(:passenger).permit(:name, :email)
-    end 
+   
 
  
 end
