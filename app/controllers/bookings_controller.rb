@@ -1,17 +1,14 @@
 class BookingsController < ApplicationController
 
     def new
-        @booking = Booking.new() 
-        @selected_flight = Flight.find(params[:flight])
+        @selected_flight = Flight.find(flight_params[:flight])
+        @booking = Booking.new(flight_id: @selected_flight.id) 
+
     end 
 
-    def bookings_params 
-        params.permit(:flight_id)
+    def flight_params 
+        params.permit(:flight)
     end 
-
-    # def flight_params 
-    #     params.permit(:departure_airport_id, :arrival_airport_id, :departure_date)
-    # end 
 
  
 end

@@ -133,10 +133,10 @@
     </div>
       
   <%end %>
+        <%=f.hidden_field :number_of_passengers, value: params[:number_of_passengers]%> 
         <div class="flight_next">
           <%=f.submit "Continue"%>
         </div>
-      <%=f.hidden_field :number_of_passengers%>
 <%end%>
 </div>
     <%end %>
