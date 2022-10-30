@@ -3,6 +3,7 @@ class BookingsController < ApplicationController
     def new
         @selected_flight = Flight.find(flight_params[:flight])
         @booking = Booking.new # change to booking new 
+        @number_of_passengers = params[:number_of_passengers].to_i
         params[:number_of_passengers].to_i.times {@booking.passengers.build}
 
     end 
