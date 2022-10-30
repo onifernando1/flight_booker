@@ -2,13 +2,14 @@ class BookingsController < ApplicationController
 
     def new
         @selected_flight = Flight.find(flight_params[:flight])
-        @booking = Booking.new(flight_id: @selected_flight.id) # change to booking new 
-        create_passengers()
+        @booking = Booking.new # change to booking new 
+        params[:number_of_passengers].to_i.times {@booking.passengers.build}
 
     end 
 
     def create 
         @booking = Booking.new(booking_params)
+        @booking.passengers.build(passenger_params)
         if @booking.save
             redirect_to @booking
         else 
@@ -28,13 +29,14 @@ class BookingsController < ApplicationController
         params.permit(:flight)
     end 
 
-    def create_passengers
-        @number_of_passengers = params[:number_of_passengers]
-        @number_of_passengers.to_i.times {@booking.passengers.build()}
-    end 
 
     def booking_params
         params.require(:booking).permit(:flight_id, passenger_attributes: [:name, :email])
+    end 
+
+    def passenger_params
+        params.require(:passenger).permit(:name, :email)
+
     end 
 
    

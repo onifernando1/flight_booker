@@ -1,17 +1,19 @@
-<%= @booking.flight.departure_airport.name %>
-<%= @booking.flight.departure_date.strftime("%d/%m") %>
-<%= @booking.flight.departure_time.strftime("%H:%M") %>
-<%= @booking.flight.arrival_airport.name%>
-<%= @booking.flight.arrival_date.strftime("%d/%m") %>
-<%= @booking.flight.arrival_time.strftime("%H:%M") %> # change to selected fight stuff 
+<%= @selected_flight.departure_airport.name %>
+<%= @selected_flight.departure_date.strftime("%d/%m") %>
+<%= @selected_flight.departure_time.strftime("%H:%M") %>
+<%= @selected_flight.arrival_airport.name%>
+<%= @selected_flight.arrival_date.strftime("%d/%m") %>
+<%= @selected_flight.arrival_time.strftime("%H:%M") %> 
 
 <%= form_with model:@booking, data:{turbo:false} do |f| %>
-<%=f.hidden_field :flight_id, value: @booking.flight.id%> # change to selecgted flight 
+<%=f.hidden_field :flight_id, value: @selected_flight.id%> 
 <%= fields_for :passenger do |passenger_form|%>
-    <%=passenger_form.label :passenger_name, "Passenger Name"%>
-    <%=passenger_form.text_field :passenger_name%>
-    <%=passenger_form.label :passenger_email, "Passenger Email"%>
-    <%=passenger_form.text_field :passenger_email%>
+    <%=passenger_form.label :name, "Passenger Name"%>
+    <%=passenger_form.text_field :name%>
+    <%=passenger_form.label :email, "Passenger Email"%>
+    <%=passenger_form.text_field :email%>
+    <%=passenger_form.hidden_field :flight_id, value: @selected_flight.id%> 
+
     <% end %>
 <%=f.submit "Submit"%>
 
