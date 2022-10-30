@@ -7,15 +7,13 @@
 
 <%= form_with model:@booking, data:{turbo:false} do |f| %>
 <%=f.hidden_field :flight_id, value: @selected_flight.id%> 
-<% @number_of_passengers.times do %>
-<%= fields_for :passenger do |passenger_form|%>
+<%= f.fields_for :passengers do |passenger_form|%> 
     <%=passenger_form.label :name, "Passenger Name"%>
     <%=passenger_form.text_field :name%>
     <%=passenger_form.label :email, "Passenger Email"%>
     <%=passenger_form.text_field :email%>
     <%=passenger_form.hidden_field :flight_id, value: @selected_flight.id%> 
     <% end %>
-    <%end%>
 <%=f.submit "Submit"%>
 
 <%end%>
