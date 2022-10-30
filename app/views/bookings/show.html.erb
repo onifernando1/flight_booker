@@ -1,0 +1,14 @@
+<div class="show_flight">
+<%= @booking.flight.departure_airport.name %>
+<%= @booking.flight.departure_date.strftime("%d/%m") %>
+<%= @booking.flight.departure_time.strftime("%H:%M") %>
+<%= @booking.flight.arrival_airport.name%>
+<%= @booking.flight.arrival_date.strftime("%d/%m") %>
+<%= @booking.flight.arrival_time.strftime("%H:%M") %>
+</div>
+<%@booking.passengers.each do |passenger|%>
+<div class="passenger">
+<%=passenger.name%>
+<%=passenger.email%>
+</div>
+<%end%>

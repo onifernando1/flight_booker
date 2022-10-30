@@ -1,0 +1,32 @@
+.flight.new{
+    margin-bottom:30px;
+}
+
+.new_container{
+    background-color: #dee3ed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height:100vh;
+}
+
+.individual_passenger > input{
+    margin-bottom:10px;
+}
+
+.flight_next.new {
+    /* margin-left:300px; */
+}
+
+.new_flight{
+
+}
+
+.booking_form{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.passenger_form{}

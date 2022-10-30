@@ -1,19 +1,60 @@
-<%= @selected_flight.departure_airport.name %>
-<%= @selected_flight.departure_date.strftime("%d/%m") %>
-<%= @selected_flight.departure_time.strftime("%H:%M") %>
-<%= @selected_flight.arrival_airport.name%>
-<%= @selected_flight.arrival_date.strftime("%d/%m") %>
-<%= @selected_flight.arrival_time.strftime("%H:%M") %> 
+<div class="new_container">
+
+    <div class="flight new">
+   <div class="flight_logo"> <%=image_tag "flightlogo.png"%>
+        </div>
+
+        <div class="departure_time">
+        <%=@selected_flight.departure_time.strftime("%H:%M")%>
+        <div class="departure_airport_code"><%=@selected_flight.departure_airport.code%></div>
+        </div>
+        <div class ="middle">
+          <div class="duration">
+            <%=(@selected_flight.duration.to_f/60).round(1) %> hours 
+          </div>
+          <div class="plane_and_line">
+            <div class="line">
+              <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <line x1="-600" y1="0" x2="600" y2="0" stroke="black", stroke-width="20" />
+              </svg>
+            </div>
+            <div class="plane">
+              <%=image_tag("plane.svg")%>
+            </div> 
+          </div>
+                  <div class="direct">Direct</div>
+
+        </div>
+        
+        <div class="arrival_time"><%=@selected_flight.arrival_time.strftime("%H:%M")%>
+               
+               
+          <div class="arrival_airport_code"> <%=@selected_flight.arrival_airport.code%> </div>
+        </div>
+
+        </div>
+
+
 
 <%= form_with model:@booking, data:{turbo:false} do |f| %>
-<%=f.hidden_field :flight_id, value: @selected_flight.id%> 
-<%= f.fields_for :passengers do |passenger_form|%> 
-    <%=passenger_form.label :name, "Passenger Name"%>
-    <%=passenger_form.text_field :name%>
-    <%=passenger_form.label :email, "Passenger Email"%>
-    <%=passenger_form.text_field :email%>
-    <%=passenger_form.hidden_field :flight_id, value: @selected_flight.id%> 
-    <% end %>
-<%=f.submit "Submit"%>
+<div class="booking_form">
 
+<%=f.hidden_field :flight_id, value: @selected_flight.id%> 
+<div class="passenger_form">
+<%= f.fields_for :passengers do |passenger_form|%> 
+    <div class="individual_passenger">
+    <%=passenger_form.label :name, "Passenger Name:"%>
+    <%=passenger_form.text_field :name%>
+    <%=passenger_form.label :email, "Passenger Email:"%>
+    <%=passenger_form.text_field :email%>
+    <%=passenger_form.hidden_field :flight_id, value: @selected_flight.id%>
+        </div>
+ 
+    <% end %>
+    </div>
+    <div class="flight_next new">
+<%=f.submit "Continue"%>
+</div>
 <%end%>
+</div>
+</div>
