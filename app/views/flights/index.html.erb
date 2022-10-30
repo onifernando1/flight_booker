@@ -13,58 +13,59 @@
 
     <div class = "website_header">
 
-    <div class="header_logo">
-        <%=link_to "OniFlights", flights_path %> 
-    </div>    
-    <div class="header_link home"> <%=link_to "Home", flights_path %> </div>
-    <div class="header_link about"> About Us</div>
-    <div class="header_link contact"> Contact </div>
+      <div class="header_logo">
+          <%=link_to "OniFlights", flights_path %> 
+      </div>    
+      <div class="header_link home"> <%=link_to "Home", flights_path %> </div>
+      <div class="header_link about"> About Us</div>
+      <div class="header_link contact"> Contact </div>
 
 
-</div>
+    </div>
 
     <div class="flight_index_form_bg">
 
-      <div class="flight_index_quote">
+      <div class="flight_index_quote"> 
         Let the journey begin
-      </div>
+       </div>
 
-    <div class="flight_index_form_container">
+      <div class="flight_index_form_container">
 
-      <p>One Way<p>
-       
+        <p>One Way<p>
+        
 
-      <%=form_with url:"/", method:"get",data: { turbo: false} do |f| %>
-        <div class="flight_form_container">
-          <div class="flight_form">
-            <%= f.label :departure_airport_id, "Departure Airport"%>
-            <%= f.collection_select(:departure_airport_id, Airport.all, :id, :name)%>
+        <%=form_with url:"/", method: :get, data: { turbo: false} do |f| %>
+          <div class="flight_form_container">
+            <div class="flight_form">
+              <%= f.label :departure_airport_id, "Departure Airport"%>
+              <%= f.collection_select(:departure_airport_id, Airport.all, :id, :name)%>
+            </div>
+            <div class ="flight_form">
+              <%= f.label :arrival_airport_id, "Arrival Airport"%>
+              <%= f.collection_select(:arrival_airport_id, Airport.all, :id, :name)%>
+            </div>
+            <div class="flight_form">
+              <%= f.label :departure_date, "Departure Date"%>
+              <%= f.collection_select(:departure_date, Flight.select(:departure_date).distinct, :departure_date, :departure_date)%>
+            </div>
+            <div class="flight_form passengers">
+              <%= f.label :number_of_passengers, "No. of passengers"%>
+              <%= f.select :number_of_passengers, options_for_select([[1,1],[2,2],[3,3],[4,4]])%>
+            </div>
           </div>
-          <div class ="flight_form">
-            <%= f.label :arrival_airport_id, "Arrival Airport"%>
-            <%= f.collection_select(:arrival_airport_id, Airport.all, :id, :name)%>
-          </div>
-          <div class="flight_form">
-            <%= f.label :departure_date, "Departure Date"%>
-            <%= f.collection_select(:departure_date, Flight.select(:departure_date).distinct, :departure_date, :departure_date)%>
-          </div>
-          <div class="flight_form passengers">
-            <%= f.label :number_of_passengers, "No. of passengers"%>
-            <%= f.select :number_of_passengers, options_for_select([[1,1],[2,2],[3,3],[4,4]])%>
-          </div>
-        </div>
 
-       <p>□ Direct Flights Only</p>
-       <p>□ Add Nearby Airports</p>
-
-        </div>
-
+            <p>□ Direct Flights Only</p>
+            <p>□ Add Nearby Airports</p>
+        
           <div class="flight_search">
             <%= f.submit "Search Flights" %>
           </div>
+        </div>
+
       <%end%>
-      </div>
-    </div>
+     </div> 
+
+
   <% else %>
 
     <div class = "website_header grey">

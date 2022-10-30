@@ -5,7 +5,7 @@ body {
 .flight_index_form_bg   {
     background-image: url('beach.jpg');
     background-position: -200px -1050px;
-    height:700px;
+    height:100vh;
     width:100%;
     display:flex;
     align-items: center;
@@ -123,8 +123,8 @@ body {
 }
 
 .flight_search {
-    margin-left:-240px;
-    margin-top:100px;
+    margin-left:780px;
+    margin-top:-60px;
 }
 
 .flight_form.direct_flights {
