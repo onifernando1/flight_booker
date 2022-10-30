@@ -1,5 +1,7 @@
 <div class="new_container">
 
+<% if @selected_flight !=nil%>
+
     <div class="flight new">
    <div class="flight_logo"> <%=image_tag "flightlogo.png"%>
         </div>
@@ -33,13 +35,25 @@
         </div>
 
         </div>
+<%end%>
+
+<div id="error_explanation">
+      <% if @booking.errors.any? %>
+      <h2><%= pluralize(@booking.errors.count, "error") %> prohibited this booking from continuing:</h2>
+      <ul>
+      <% @booking.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      <%end%>
+      </ul>
+    </div>
 
 
-
-<%= form_with model:@booking, data:{turbo:false} do |f| %>
+<%= form_with model:@booking, data:{turbo:false}, :url => {:action => :create, :flight => @selected_flight} do |f| %>
 <div class="booking_form">
-
-<%=f.hidden_field :flight_id, value: @selected_flight.id%> 
+<%if @selected_flight != nil%>
+  <%=f.hidden_field :flight_id, value: @selected_flight.id%> 
+<%end%> 
 <div class="passenger_form">
 <%= f.fields_for :passengers do |passenger_form|%> 
     <div class="individual_passenger">
@@ -47,7 +61,9 @@
     <%=passenger_form.text_field :name%>
     <%=passenger_form.label :email, "Passenger Email:"%>
     <%=passenger_form.email_field :email%>
-    <%=passenger_form.hidden_field :flight_id, value: @selected_flight.id%>
+    <%if @selected_flight != nil%>
+      <%=passenger_form.hidden_field :flight_id, value: @selected_flight.id%>
+    <%end%>
         </div>
  
     <% end %>
