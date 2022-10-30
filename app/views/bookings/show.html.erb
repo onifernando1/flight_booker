@@ -1,14 +1,56 @@
-<div class="show_flight">
-<%= @booking.flight.departure_airport.name %>
-<%= @booking.flight.departure_date.strftime("%d/%m") %>
-<%= @booking.flight.departure_time.strftime("%H:%M") %>
-<%= @booking.flight.arrival_airport.name%>
-<%= @booking.flight.arrival_date.strftime("%d/%m") %>
-<%= @booking.flight.arrival_time.strftime("%H:%M") %>
-</div>
+<div class="show_flights_container">
+
+<div class="complete">Thank you for completing a booking with us!</div>
+
+<div class="flight new">
+   <div class="flight_logo"> <%=image_tag "flightlogo.png"%>
+        </div>
+
+        <div class="departure_time">
+        <%=@booking.flight.departure_time.strftime("%H:%M")%>
+        <div class="departure_airport_code"><%=@booking.flight.departure_airport.code%></div>
+        </div>
+        <div class ="middle">
+          <div class="duration">
+            <%=(@booking.flight.duration.to_f/60).round(1) %> hours 
+          </div>
+          <div class="plane_and_line">
+            <div class="line">
+              <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <line x1="-600" y1="0" x2="600" y2="0" stroke="black", stroke-width="20" />
+              </svg>
+            </div>
+            <div class="plane">
+              <%=image_tag("plane.svg")%>
+            </div> 
+          </div>
+                  <div class="direct">Direct</div>
+
+        </div>
+        
+        <div class="arrival_time"><%=@booking.flight.arrival_time.strftime("%H:%M")%>
+               
+               
+          <div class="arrival_airport_code"> <%=@booking.flight.arrival_airport.code%> </div>
+        </div>
+
+        </div>
+
 <%@booking.passengers.each do |passenger|%>
 <div class="passenger">
-<%=passenger.name%>
-<%=passenger.email%>
+    <div class="flight_logo"> <%=image_tag "flightlogo.png"%>
+            </div>
+            <div class="passenger_info">
+    <div class="passenger_name">
+    Passenger name: <%=passenger.name%>
+    </div>
+    <div class="passenger_email">
+    Passenger email: <%=passenger.email%>
+    </div>
+    </div>
+        <div class="booking_price">£<%=@booking.flight.price%></div>
+
 </div>
 <%end%>
+
+</div>
