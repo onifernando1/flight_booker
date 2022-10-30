@@ -7,9 +7,21 @@
   </head>
   <body>
 
-  #to do: header navs, seed flights, flash messages
+
 
   <% if @potential_flights.length == 0 %>
+
+    <div class = "website_header">
+
+    <div class="header_logo">
+        <%=link_to "OniFlights", flights_path %> 
+    </div>    
+    <div class="header_link home"> <%=link_to "Home", flights_path %> </div>
+    <div class="header_link about"> About Us</div>
+    <div class="header_link contact"> Contact </div>
+
+
+</div>
 
     <div class="flight_index_form_bg">
 
@@ -54,6 +66,18 @@
       </div>
     </div>
   <% else %>
+
+    <div class = "website_header grey">
+
+    <div class="header_logo">
+        <%=link_to "OniFlights", flights_path %> 
+    </div>    
+    <div class="header_link home"> <%=link_to "Home", flights_path %> </div>
+    <div class="header_link about"> About Us</div>
+    <div class="header_link contact"> Contact </div>
+
+
+    </div>
   <div class="flight_index_form_bg results">
 
     <div class="flight_index_form_container results">         

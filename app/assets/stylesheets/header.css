@@ -1,5 +1,5 @@
 .header_logo  {
-    background-color: #dee3ed;
+    /* background-color: #dee3ed; */
     font-size:1.5rem;
     padding:10px;
     color:rgb(27, 195, 237);
@@ -10,7 +10,7 @@
 }
 
 .header_logo > a{
-    background-color: #dee3ed;
+    /* background-color: #dee3ed; */
     font-size:1.5rem;
     padding:10px;
     color:rgb(27, 195, 237);
@@ -34,7 +34,10 @@
 }
 
 .website_header {
-    background-color: #dee3ed;
+    /* background-color: #dee3ed; */
+    background-image: url('beach.jpg');
+    background-position: -200px -1000px;
+
     display:grid;
     grid-template-columns: 1fr 1fr 1fr 1fr  ;
     grid-template-rows: 1fr;
@@ -59,4 +62,9 @@
     text-decoration:  none;
     color:black;
 
+}
+
+.website_header.grey {
+    background-color: #dee3ed;
+    background-image: none;
 }
