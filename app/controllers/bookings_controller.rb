@@ -15,8 +15,11 @@ class BookingsController < ApplicationController
         @selected_flight = Flight.find(params[:flight])
         @booking = Booking.new(booking_params)
         if @booking.save
+            @booking.passengers.each do |passenger| 
+                PassengerMailer.with(booking_id: @booking.id, passenger_id:passenger.id).welcome_email.deliver_now
+            end 
             redirect_to @booking
-            PassengerMailer.with(booking_id: @booking.id).welcome_email.deliver_now
+
         else 
             render :new, status: :unprocessable_entity, :flight => @selected_flight.id
         end 
