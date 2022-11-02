@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddidToFlights < ActiveRecord::Migration[7.0]
   def change
     add_column :flights, :departure_airport_id, :datetime
