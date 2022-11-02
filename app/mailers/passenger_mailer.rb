@@ -2,7 +2,7 @@ class PassengerMailer < ApplicationMailer
     default from: 'notifications@example.com'
 
     def welcome_email 
-        @passenger = params[:passenger]
-        mail(to: @passenger.email, subject:"Welcome!")
+        @booking = Booking.find(params[:booking_id])
+        mail(to: @booking.passengers.email, subject:"Welcome!")
     end
 end
